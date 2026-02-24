@@ -13,3 +13,16 @@ nodes = [
     
 ]
 
+def dabut_serverus(saraksts):
+    rezultats = {}
+    for node in saraksts:
+        dati = node.split(';')
+        vards = dati[0]
+        ip = dati[1]
+        statuss = dati[3].strip().upper()
+
+        if vards.startswith("Srv"):
+            rezultats[ip] = statuss
+        return rezultats
+    
+    print(dabut_serverus(nodes))
